@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useRef, ChangeEvent, KeyboardEvent } from 'react';
 import InputBox from '../components/InputBox';
 
+
 export default function SignIn() {
 
     const idRef = useRef<HTMLInputElement>(null);
@@ -50,6 +51,7 @@ export default function SignIn() {
         if (event.key !== 'Enter') return;
         onSignInButtonClickHandler();
     };
+
     
   return (
     <div id='sign-in-wrapper'>

@@ -1,28 +1,33 @@
-import { ChangeEvent, KeyboardEvent } from 'react';
+import { forwardRef } from 'react';
 
 interface Props {
-  type: 'text' | 'password';
   title: string;
   placeholder: string;
+  type: string;
   value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void;
-  isErrorMessage?: boolean;
-  massage?: string;
+  onChange: (event: any) => void;
+  isErrorMessage: boolean;
+  message: string;
+  buttonTitle?: string;
+  onButtonClick?: () => void;
+  onKeyDown?: (event: any) => void;
 }
 
-export default function InputBox({ type, title, placeholder, value, onChange, onKeyDown, isErrorMessage, massage }: Props) {
+const InputBox = forwardRef<HTMLInputElement, Props>((props, ref) => {
   return (
     <div className="input-box">
       <input
-        type={type}
-        title={title}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
+        type={props.type}
+        title={props.title}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChange}
+        onKeyDown={props.onKeyDown}
+        ref={ref}
       />
-      {isErrorMessage && massage && <div className="error-message">{massage}</div>}
+      {props.isErrorMessage && props.message && <div className="error-message">{props.message}</div>}
     </div>
   );
-} 
+});
+
+export default InputBox; 
