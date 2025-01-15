@@ -1,4 +1,8 @@
 # Pawrest
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 5daaf3e (readme 수정)
 
 Pawrest는 유기동물을 위한 정보 공유 및 주인찾기 플랫폼입니다.
 
@@ -9,5 +13,9 @@ Pawrest는 유기동물을 위한 정보 공유 및 주인찾기 플랫폼입니
 -   추가 기능 예정
 
 ## 기술 스택
+<<<<<<< HEAD
 
 -   Spring Boot, React, MySQL
+=======
+- Spring Boot, React, MySQL
+>>>>>>> 5daaf3e (readme 수정)
