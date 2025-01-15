@@ -4,7 +4,6 @@ import './style.css';
 
 const Main: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [menuStyle, setMenuStyle] = useState(false);
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
