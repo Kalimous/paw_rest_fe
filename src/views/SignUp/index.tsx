@@ -35,12 +35,14 @@ export default function SignUp() {
     const [isIdCheck, setIsIdCheck] = useState<boolean>(false);
     const [isCertificationCheck, setIsCertificationCheck] = useState<boolean>(false);
 
-    const signUpButtonClickHandler = id && password && passwordCheck && name && email && certificationNumber ? 'primary-button-lg' : 'disabled-button-lg';
+    const signUpButtonClass = id && password && passwordCheck && name && email && certificationNumber ? 'primary-button-lg' : 'disabled-button-lg';
 
     const emailPattern = /^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,4}$/;
     const passwordPattern = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,13}$/;
 
     const navigate = useNavigate();
+
+    
 
     const onNameChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
@@ -118,30 +120,57 @@ export default function SignUp() {
         // signUpRequest(requestBody).then(signUpResponse);
     };
     
-    const onIdKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key == 'Enter') return;
-        onIdCheckButtonClickHandler();
-    };
-
-    const onIdCheckButtonClickHandler = () => {
+    const onIdButtonClickHandler = () => {
         if (!id) return;
-        
-        if (id.length < 4) {
-            setIsIdError(true);
-            setIdMessage('아이디는 4자리 이상이어야 합니다.');
-            return;
-        }
-        setIsIdCheck(true);
-        // API 호출 로직은 나중에 추가
+        // const request: IdCheckRequestDto = { id };
+
+        // idCheckRequest(requestBody).then(idCheckResponse);
+    };
+    const onNameKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        if (!idRef.current) return;
+        idRef.current.focus();
+    };
+    const onIdKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        onIdButtonClickHandler();
+    };
+    const onPasswordKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        if (!passwordCheckRef.current) return;
+        passwordCheckRef.current.focus();
+    };
+    const onPasswordCheckKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        if (!emailRef.current) return;
+        emailRef.current.focus();
+    };
+    const onEmailKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
+        // onEmailButtonClickHandler();
+    };
+    const onCertificationNumberKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key !== 'Enter') return;
     };
 
+    
+    
     return (
         <div id='sign-up-wrapper'>
             <div className='sign-up-container'>
                 <div className='sign-up-title'>{'회원가입'}</div>
                 <div className='sign-up-content-divaider'></div>
                 <div className='sign-up-content-input-box'>
-                    <InputBox ref={idRef} title='아이디' placeholder='아이디를 입력해주세요' type='text' value={id} onChange={onIdChangeHandler} isErrorMessage={isIdError} message={idMessage} buttonTitle='중복확인' onButtonClick={onIdCheckButtonClickHandler} onKeyDown={onIdKeyDownHandler} /> 
+                    <InputBox ref={nameRef} title='이름' placeholder='이름' type='text' value={name} onChange={onNameChangeHandler} isErrorMessage={isNameError} message={nameMessage} onKeyDown={onNameKeyDownHandler} />
+                    <InputBox ref={idRef} title='아이디' placeholder='아이디' type='text' value={id} onChange={onIdChangeHandler} isErrorMessage={isIdError} message={idMessage} buttonTitle='중복확인' onButtonClick={onIdButtonClickHandler} onKeyDown={onIdKeyDownHandler} /> 
+                    <InputBox ref={passwordRef} title='비밀번호' placeholder='비밀번호' type='password' value={password} onChange={onPasswordChangeHandler} isErrorMessage={isPasswordError} message={passwordMessage} onKeyDown={onPasswordKeyDownHandler}/>
+                    <InputBox ref={passwordCheck} title='비밀번호 확인' placeholder='비밀번호 확인' type='password' value={passwordCheck} onChange={onPasswordChangeHandler} isErrorMessage={isPasswordCheckError} message={passwordCheckMessage} onKeyDown={onPasswordCheckKeyDownHandler} />
+                    <InputBox ref={emailRef} title='이메일' placeholder='이메일' type='text' value={email} onChange={onEmailChangeHandler} isErrorMessage={isEmailError} message={emailMessage} buttonTitle='이메일 인증'  onButtonClick={onEmailClickHandler} onKeyDown={onEmailKeyDownHandler} />
+                    <InputBox ref={certificationNumberRef} title='인증번호' placeholder='인증번호' type='text' value={certificationNumber} onChange={onCertificationNumberChangeHandler} isErrorMessage={isCertificationNumberError} message={certificationNumberMessage} buttonTitle='인증 확인' onButtonClick={onCertificationNumberButtonClickHandler} onKeyDown={onCertificationNumberKeyDownHandler} />
+                </div>
+                <div className='sign-up-content-button-box'>
+                    <div className={`${signUpButtonClass} full-width`} onClick={onSignUpButtonClickHandler}>{'회원가입'}</div>
+                    <div className='text-link-lg full-width' >{'로그인'}</div>
                 </div>
             </div>
         </div>

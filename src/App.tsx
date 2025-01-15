@@ -1,20 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './views/SignIn';
 import Main from './views/main';
 import SignUp from './views/SignUp';
 import './App.css'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/sign_in" element={<SignIn />} />
-        <Route path="/sign_up" element={<SignUp />} />
-        <Route path="*" element={<div>페이지를 찾을 수 없습니다.</div>} />
+        <Route path="/" element={<Main />}/>
       </Routes>
-    </BrowserRouter>
-  )
-}
-
+    </Router>
+  );
+};
 export default App
