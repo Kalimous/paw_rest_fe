@@ -1,7 +1,21 @@
+span{
+    display: inline;
+    align-items: center;
+}
+
 h2{
     font-size: 32px;
-    display: flex;
+    display: inline;
     align-items: center;
+    margin: 0;
+}
+
+.a{
+    color: #F47878;
+}
+
+.b{
+    color: #596EF6;
 }
 
 .phrase-container{
@@ -13,16 +27,17 @@ h2{
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 1000px;
     gap: 16px;
 }
 
 .phrase-content{ 
     font-size: 32px;
-    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .phrase-img{
     width: 150px;
     height: 120px;
+    margin-top: 50px;
 }
