@@ -1,36 +1,31 @@
-import { ChangeEvent, forwardRef } from 'react';
-
-import './style.css';
+import { forwardRef } from 'react';
 
 interface Props {
     title: string;
     placeholder: string;
-    type: 'text' | 'password';
+    type: string;
     value: string;
-    isErrorMessage?: boolean;
+    onChange: (event: any) => void;
+    isErrorMessage: boolean;
+    message: string;
     buttonTitle?: string;
-    message?: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     onButtonClick?: () => void;
+    onKeyDown?: (event: any) => void;
 }
 
-const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
-    const {title, placeholder, type, value, isErrorMessage, buttonTitle, message, onChange, onKeyDown, onButtonClick} = props;
-
-    const buttonClass = value === ''?'input-box-button-disabled':'input-box-button';
-    const messageClass = isErrorMessage ? 'input-box-message-error' : 'input-box-message';
-
+const InputBox = forwardRef<HTMLInputElement, Props>((props, ref) => {
     return (
-        <div className='input-box'>
-            <div className='input-box-title'>{title}</div>
-            <div className='input-box-content'>
-                <div className='input-box-body'>
-                    <input ref={ref} className='input-box-input' type={type} placeholder={placeholder} value={value} onChange={onChange} onKeyDown={onKeyDown} />
-                    {buttonTitle !== undefined && onButtonClick !== undefined && <div className={buttonClass} onClick={onButtonClick}>{buttonTitle}</div>}
-                </div>
-                {message != undefined && <div className={messageClass}>{message}</div>}
-            </div>
+        <div className="input-box">
+            <input
+                type={props.type}
+                title={props.title}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={props.onChange}
+                onKeyDown={props.onKeyDown}
+                ref={ref}
+            />
+            {props.isErrorMessage && props.message && <div className="error=message">{props.message}</div>}
         </div>
     );
 });
