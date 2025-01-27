@@ -1,0 +1,39 @@
+.Footer{
+    display: flex;
+    background-color: #4e4e4e;
+    height: 200px;
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+.sns, .inquiry{
+    display: block;
+    flex-direction: column;
+    
+}
+
+.social-icons{
+    display: flex;
+    gap: 10px;
+    color: #695B4E;
+}
+
+.contact{
+    display: flex;
+    gap: 10px;
+    color: #695B4E;
+}
+
+.img-bone{
+    width: 78px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.catspaw{
+    position: absolute;
+    bottom: 0;
+    width: 650px;
+    height: 213px;
+    right: 300px;
+}

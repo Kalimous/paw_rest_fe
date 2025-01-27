@@ -42,13 +42,13 @@
 .menu {
     position: fixed;
     top: auto;
-    left: 50%;
+    right: 0;
     background-color: none;
     border: none;
     display: flex;
     align-items: center;
-    justify-content: right;
     gap: 30px;
+    padding-right: 20px;
 }
 
 .menu a {
@@ -61,6 +61,11 @@
 }
 
 .menu a:hover {
-    background-color: #f5f5f5;
-    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-grp{
+    display: flex;
+    margin-right: 100px;
+    gap: 16px;
 }

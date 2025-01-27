@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
+import Body from './Body';
+import Body2 from './Body2'
+import Footer from './Footer'
 import './style.css';
 
 const Main: React.FC = () => {
@@ -20,8 +23,12 @@ const Main: React.FC = () => {
     <div className="home-container">
       <Header isScrolled={isScrolled}/>
       <main className="main">
-       
+      <Body/>
       </main>
+      <main>
+      <Body2/>
+      </main>
+      <Footer/>
     </div>
   );
 }
