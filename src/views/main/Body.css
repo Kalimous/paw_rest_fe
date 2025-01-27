@@ -1,0 +1,35 @@
+*{
+    font-family: "Hakgyoansim Dunggeunmiso TTF";
+}
+
+.animal-btn{
+    position: relative;
+    margin-top: 130px;
+    display: flex;
+}
+
+.abandoned-animals-report{
+    position: absolute;
+    border-radius: 50%;
+    background: #FCEFCD;
+    width: 200px;
+    height: 200px;
+    border: none;
+    font-size: 32px;
+    right: 350px;
+    cursor: pointer;
+}
+
+.missing-animals-register{
+    position: absolute;
+    border-radius: 50%;
+    background: #F8DBCC;    
+    width: 200px;
+    height: 200px;
+    border: none;
+    font-size: 32px;
+    right: 100px;
+    cursor: pointer;
+}
+
+
