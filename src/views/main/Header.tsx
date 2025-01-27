@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled}) => {
                     <div className="btn-grp">
                         <a href="#">커뮤니티</a>
                         <a href="#">실종동물 찾기</a>
-                        <a href="#">유기견 현황</a>
+                        <a href="#">유기견 지도</a>
                         <a href="#">유기견 보호소</a>
                     </div>
                     <div>

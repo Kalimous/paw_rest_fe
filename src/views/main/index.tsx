@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Body from './Body';
 import Body2 from './Body2'
-import Footer from './Footer'
 import './style.css';
 
 const Main: React.FC = () => {
@@ -27,7 +26,6 @@ const Main: React.FC = () => {
       <main>
       <Body2/>
       </main>
-      <Footer/>
     </div>
   );
 }
