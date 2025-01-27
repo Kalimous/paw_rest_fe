@@ -1,5 +1,5 @@
 import NationCurrent from './NationCurrent'
-import Adbanner from './banner'
+import Adbanner from './Banner'
 import Phrase from './Phrase'
 import './Body2.css'
 
