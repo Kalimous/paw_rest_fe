@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled}) => {
                 <nav className="menu"> 
                     <div className="btn-grp">
                         <a href="#">커뮤니티</a>
-                        <a href="#">실종동물 찾기</a>
+                        <a href="/Find-animals">실종동물 찾기</a>
                         <a href="#">유기견 지도</a>
                         <a href="#">유기견 보호소</a>
                     </div>
