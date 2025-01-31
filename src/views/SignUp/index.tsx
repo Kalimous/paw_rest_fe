@@ -1,4 +1,4 @@
-import InputBox from "../components/InputBox";
+import InputBox from "../../components/InputBox";
 import { useState, useRef, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 

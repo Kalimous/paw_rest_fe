@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useRef, ChangeEvent, KeyboardEvent } from 'react';
-import InputBox from '../components/InputBox';
+import InputBox from '../../components/InputBox';
 
 
 export default function SignIn() {
@@ -31,7 +31,7 @@ export default function SignIn() {
     };
 
     const onSignUpButtonClickHandler = () => {
-        navigate('/sign_up');
+        navigate('/Join');
     };
 
     const onSignInButtonClickHandler = () => {
@@ -61,7 +61,7 @@ export default function SignIn() {
         </div>
         <div id='sign-in-content-box'>
             <div className='sign-in-content-input-box'>
-                <InputBox ref={idRef} type='text' title='아이디' placeholder='아이디를 입력해주세요' value={id} onChange={onIdChange} onKeyDown={onIdKeyDownHandler} />
+                <InputBox ref={idRef} title='아이디' placeholder='아이디를 입력해주세요' type='text' value={id} onChange={onIdChange} onKeyDown={onIdKeyDownHandler} isErrorMessage={false} message="" />
                 <InputBox ref={passwordRef} type='password' title='비밀번호' placeholder='비밀번호를 입력해주세요' value={password} onChange={onPasswordChange} isErrorMessage message={massage} onKeyDown={onPasswordKeyDownHandler} />
           </div>
           <div className='sign-in-content-button-box'>
