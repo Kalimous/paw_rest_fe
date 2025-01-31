@@ -34,8 +34,8 @@
 
 .catspaw{
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     width: 650px;
-    height: 213px;
+    height: 200px;
     right: 300px;
 }

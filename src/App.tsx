@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import routes from './Routes/Routes';
 import './App.css'
-import Register from './views/main/menu/Register'
+
 
 const App: React.FC = () => {
   return (

@@ -5,8 +5,9 @@ const Body = () =>{
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/Register')
+        navigate('../Register')
     }
+
     return(
         <div>
             <div className="animal-btn">
