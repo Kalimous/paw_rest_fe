@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
+import './index.css'
 
 const animalOptions = [
     {value: "dog", label: "강아지"},
@@ -49,11 +50,11 @@ const FA: React.FC =  () => {
             <div className='fa-header'>
                 <Header isScrolled={isScrolled}/>
             </div>
-            <div className='select-box h-screen'>
-                <div className="w-1/4 bg-yellow-100 p-6 flex flex-col hap-4">
-                    <h2 className="fa-body font-bold">유기동물 지도</h2>
-                    <div>
-                        <label className="block font-medium">지역</label>
+            <div className='select-container'>
+                <div className="select-form">
+                    <h2 className="title">유기동물 지도</h2>
+                    <div className="region-search">
+                        <label>지역</label>
                         <Select
                             options={regionOptions}
                             value={selectedRegion}
@@ -61,8 +62,8 @@ const FA: React.FC =  () => {
                             placeholder="지역 선택"
                         />
                     </div>
-                    <div>
-                        <label className="block font-medium">일시</label>
+                    <div className="date-search">
+                        <label>일시</label>
                         <DatePicker
                             selected={selectedDate}
                             onChange={(date) => setSelectDate(date)}
@@ -70,8 +71,8 @@ const FA: React.FC =  () => {
                             dateFormat="yyyy-MM-dd"
                         />
                     </div>
-                    <div>
-                        <label className="block font-medium">동물</label>
+                    <div className="animal-search">
+                        <label>동물</label>
                         <Select
                             options={animalOptions}
                             value={selectedAnimal}
@@ -79,8 +80,8 @@ const FA: React.FC =  () => {
                             placeholder="동물 선택"
                         />
                     </div>
-                    <div>
-                        <label className="block font-medium">종류</label>
+                    <div className="kind-search">
+                        <label>종류</label>
                         <Select
                             options={getBreedOptions()}
                             value={selectedBreed}
