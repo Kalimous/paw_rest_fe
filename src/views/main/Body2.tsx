@@ -10,20 +10,22 @@ interface Option{
     label: string;
 }
 
-const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+export const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     console.log(e.target.value)
 }
 
+export const regions: Option[] =[
+    {value: 'seoul', label: '서울시'},
+    {value: 'gyeonggi', label: '경기도'}
+];
+export const breeds: Option[] =[
+    {value: 'dog', label: '강아지'},
+    {value: 'cat', label: '고양이'},
+    {value: 'etc', label: '기타 동물'}
+]
+
 const Body2 = () =>{
-    const regions: Option[] =[
-        {value: 'seoul', label: '서울시'},
-        {value: 'gyeonggi', label: '경기도'}
-    ];
-    const breeds: Option[] =[
-        {value: 'dog', label: '강아지'},
-        {value: 'cat', label: '고양이'},
-        {value: 'etc', label: '기타 동물'}
-    ]
+    
     const [currentSlide, setCurrentSlide] = useState(0);
     
     const banners = [

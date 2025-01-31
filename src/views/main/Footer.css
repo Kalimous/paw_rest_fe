@@ -16,12 +16,14 @@
     display: flex;
     gap: 10px;
     color: #695B4E;
+    margin-top: 10px;
 }
 
 .contact{
     display: flex;
     gap: 10px;
     color: #695B4E;
+    margin-top: 10px;
 }
 
 .img-bone{
