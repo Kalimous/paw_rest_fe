@@ -34,8 +34,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled}) => {
                         <a href="#">유기견 보호소</a>
                     </div>
                     <div>
-                        <a href="#" style={{ color: '#CAA684' }}>로그인</a>
-                        <a href="#">회원가입</a>
+                        <a href="/Login" style={{ color: '#CAA684' }}>로그인</a>
+                        <a href="/Join">회원가입</a>
                     </div>
                 </nav>
             )}

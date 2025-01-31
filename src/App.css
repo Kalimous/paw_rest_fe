@@ -4,8 +4,8 @@
   height: 830px;
   margin: 0 auto;
   text-align: center;
+  cursor: url('assets/cursor.png') 32 32, pointer;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -47,4 +47,5 @@ html, body {
   height: 830px;
   margin: 0;
   padding: 0;
+  
 }
